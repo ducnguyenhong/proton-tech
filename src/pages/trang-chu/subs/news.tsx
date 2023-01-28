@@ -33,7 +33,7 @@ const HomeNews: React.FC = () => {
   ];
 
   return (
-    <Flex alignItems="center" flexDirection="column" my={80} px={80}>
+    <Flex alignItems="center" flexDirection="column" mt={80} px={80}>
       <Heading as="h5" fontSize={18} color="secondary.1">
         Tin tức
       </Heading>

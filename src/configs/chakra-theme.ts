@@ -13,7 +13,7 @@ const BreakpointConfig = {
 
 const ColorConfig = {
   colors: {
-    primary: { 1: '#40407a', 2: '#a40e3e', 3: '#28714d' },
+    primary: { 1: '#40407a', 2: '#353564', 3: '#2c2c54' },
     secondary: { 1: '#CF1350', 2: '#a30f3e', 3: '#8c0d35' },
     navBar: { 1: '#3cb863' },
     text: { 1: '#292D32', 2: '#828282' }
