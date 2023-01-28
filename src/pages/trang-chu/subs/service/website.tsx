@@ -1,22 +1,23 @@
 'use client';
-import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
+import ButtonPrimary from '@/app/components/button-primary';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { memo } from 'react';
 import { FaCheck } from 'react-icons/fa';
-import ImgServiceWeb from '../images/img-intro-website.png';
+import ImgServiceWeb from '../../images/img-intro-website.png';
 
 const ServiceWebsite: React.FC = () => {
   return (
-    <Flex mt={10} mx={80} boxShadow="md" p={14}>
+    <Flex h="full">
       <Box w="40%">
         <Image src={ImgServiceWeb} alt="website" />
       </Box>
 
       <Box w="60%">
         <Heading as="h4" fontSize={23}>
-          Dịch vụ Website
+          Thiết kế và xây dựng Website
         </Heading>
-        <Text mt={5}>
+        <Text mt={5} color="text.2">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking
           at its layout.
         </Text>
@@ -28,9 +29,7 @@ const ServiceWebsite: React.FC = () => {
             </Flex>
           ))}
         </Flex>
-        <Button colorScheme="red" mt={10}>
-          Trải nghiệm ngay
-        </Button>
+        <ButtonPrimary title="Trải nghiệm ngay" mt={10} />
       </Box>
     </Flex>
   );

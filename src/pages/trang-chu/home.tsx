@@ -7,7 +7,6 @@ import HomeIntro from './subs/intro';
 import HomeNews from './subs/news';
 import HomeReason from './subs/reason';
 import HomeService from './subs/service';
-import ServiceWebsite from './subs/website';
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +14,7 @@ const Home: NextPage = () => {
       <HomeIntro />
       <HomeCustomer />
       <HomeService />
-      <ServiceWebsite />
+
       <HomeReason />
       <HomeNews />
     </Box>

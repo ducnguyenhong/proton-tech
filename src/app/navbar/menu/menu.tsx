@@ -24,13 +24,27 @@ const Menu: React.FC = () => {
               <Flex
                 alignItems="center"
                 gap={2}
-                bgColor={isActive ? '#38A169' : '#FFF'}
+                bgColor={isActive ? 'primary.1' : '#FFF'}
                 px={5}
-                py="0.4rem"
+                py={2}
                 borderRadius="full"
+                transitionDuration="400ms"
+                data-group
+                _hover={{ bgColor: 'primary.1' }}
               >
-                <Icon as={icon} color={isActive ? '#FFF' : '#38A169'} />
-                <Text color={isActive ? '#FFF' : '#38A169'} fontSize={17} fontWeight={isActive ? 500 : 400}>
+                <Icon
+                  as={icon}
+                  color={isActive ? '#FFF' : 'primary.1'}
+                  _groupHover={{ color: '#FFF' }}
+                  transitionDuration="400ms"
+                />
+                <Text
+                  color={isActive ? '#FFF' : 'primary.1'}
+                  fontSize={16}
+                  fontWeight={isActive ? 500 : 400}
+                  _groupHover={{ color: '#FFF' }}
+                  transitionDuration="400ms"
+                >
                   {title}
                 </Text>
               </Flex>

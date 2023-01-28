@@ -25,9 +25,9 @@ const Navbar: React.FC = () => {
         <Link href="/">
           <Flex alignItems="center" gap={3}>
             <Image src="/images/logo.png" width={40} height={40} alt="logo" />
-            <Text as="h3" color="#e3594a" fontWeight={600} fontSize={20}>
+            <Text as="h3" color="primary.1" fontWeight={600} fontSize={20}>
               Proton{' '}
-              <Text as="span" color="#38A169" fontWeight={400}>
+              <Text as="span" color="secondary.1" fontWeight={400}>
                 Tech
               </Text>
             </Text>
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         <Menu />
 
         <Button
-          color="#38A169"
+          color="#CE124F"
           bgColor="transparent"
           borderRadius="full"
           w="2.375rem"
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
           minW={0}
           p={0}
           _active={{ bgColor: 'transparent' }}
-          _hover={{ bgColor: '#38A169' }}
+          _hover={{ bgColor: '#CE124F' }}
           transitionDuration="300ms"
           data-group
         >
