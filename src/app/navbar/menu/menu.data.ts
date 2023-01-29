@@ -3,9 +3,8 @@ import { IconType } from 'react-icons/lib';
 
 interface MenuItem {
   title: string;
-  route?: string;
+  route: string;
   icon?: IconType;
-  subs?: MenuItem[];
 }
 
 export const MENU_DATA: MenuItem[] = [
@@ -16,17 +15,17 @@ export const MENU_DATA: MenuItem[] = [
   },
   {
     title: 'Website',
-    route: '/website',
+    route: '/dich-vu-website',
     icon: FaGlobeAmericas
   },
   {
     title: 'Mobile App',
-    route: '/mobile-app',
+    route: '/dich-vu-mobile-app',
     icon: FaMobileAlt
   },
   {
     title: 'Dịch vụ',
-    route: '/service',
+    route: '/danh-sach-dich-vu',
     icon: FaShareAlt
   },
   {
