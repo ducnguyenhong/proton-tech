@@ -47,10 +47,10 @@ const HomeCustomer: React.FC = () => {
       py={10}
     >
       <Heading as="h4" fontSize={35}>
-        <Text as="h4" display="inline" color="primary.1">
+        <Text as="span" color="primary.1">
           Proton
         </Text>{' '}
-        <Text as="h4" display="inline" color="secondary.1">
+        <Text as="span" color="secondary.1">
           Tech
         </Text>{' '}
         đang được tin dùng bởi{' '}
