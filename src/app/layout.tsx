@@ -1,13 +1,13 @@
 'use client';
 import { chakraTheme } from '@/configs/chakra-theme';
 import { Box, ChakraProvider } from '@chakra-ui/react';
-import { Manrope } from '@next/font/google';
+import { Quicksand } from '@next/font/google';
 import { RecoilRoot } from 'recoil';
 import Footer from './footer';
 import './globals.css';
 import Navbar from './navbar';
 
-const manrope = Manrope({ subsets: ['vietnamese', 'latin'] });
+const font = Quicksand({ subsets: ['vietnamese', 'latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,9 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <RecoilRoot>
           <ChakraProvider theme={chakraTheme}>
-            <Box position="relative" className={manrope.className}>
+            <Box position="relative" className={font.className}>
               <Navbar />
-              <Box mt="68px">{children}</Box>
+              <Box mt="80px">{children}</Box>
               <Footer />
             </Box>
           </ChakraProvider>

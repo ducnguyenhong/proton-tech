@@ -22,7 +22,7 @@ const ColorConfig = {
 
 const FontConfig = {
   fonts: {
-    heading: `'Manrope', sans-serif`
+    heading: `'Quicksand', sans-serif`
   }
 };
 

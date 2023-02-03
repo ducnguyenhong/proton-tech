@@ -19,13 +19,14 @@ const Navbar: React.FC = () => {
 
   return (
     <Flex
-      h="68px"
+      h="80px"
       w="full"
-      bgColor={activeNavbar ? 'primary.1' : '#FFF'}
+      // background="linear-gradient(90deg, rgba(36,8,66,1) 0%, rgba(17,6,41,1) 50%, rgba(14,6,37,1) 100%)"
       position="fixed"
+      bgGradient="linear(to-r, rgba(36,8,66,1), rgba(17,6,41,1),rgba(14,6,37,1))"
       top={0}
       left={0}
-      boxShadow="base"
+      borderBottom={activeNavbar ? '1px solid #29126e' : '1px solid transparent'}
       alignItems="center"
       justifyContent="space-between"
       px={28}
@@ -54,9 +55,11 @@ const Navbar: React.FC = () => {
 
       <Flex alignItems="center">
         <Menu />
+      </Flex>
 
+      <Flex>
         <Button
-          color={activeNavbar ? '#FFF' : 'secondary.1'}
+          color="#FFF"
           bgColor="transparent"
           borderRadius="full"
           w="2.375rem"
