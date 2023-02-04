@@ -1,5 +1,4 @@
 'use client';
-import { Box } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import HomeCustomer from './subs/customer';
@@ -10,13 +9,13 @@ import HomeService from './subs/service';
 
 const Home: NextPage = () => {
   return (
-    <Box>
+    <div>
       <HomeIntro />
       <HomeCustomer />
       <HomeService />
       <HomeReason />
       <HomeNews />
-    </Box>
+    </div>
   );
 };
 

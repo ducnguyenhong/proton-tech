@@ -1,6 +1,3 @@
-'use client';
-import HomePage from '@/pages/trang-chu';
+import Home from './home';
 
-export default function Home() {
-  return <HomePage />;
-}
+export default Home;

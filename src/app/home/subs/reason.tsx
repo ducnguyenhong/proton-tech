@@ -1,5 +1,5 @@
 'use client';
-import ButtonPrimary from '@/app/components/button-primary';
+import ButtonPrimary from '@/components/button-primary';
 import { AspectRatio, Box, Flex, Heading, Icon, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import { memo } from 'react';
 import { FaFileContract, FaGlobeAmericas, FaMobileAlt, FaThLarge } from 'react-icons/fa';

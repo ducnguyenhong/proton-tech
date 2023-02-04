@@ -1,5 +1,4 @@
-'use client';
-import ButtonPrimary from '@/app/components/button-primary';
+import ButtonPrimary from '@/components/button-primary';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { memo } from 'react';
