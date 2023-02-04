@@ -1,20 +1,19 @@
 'use client';
 import ButtonPrimary from '@/app/components/button-primary';
 import { Flex, Heading } from '@chakra-ui/react';
+import Image from 'next/image';
 import { memo } from 'react';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { FaArrowRight } from 'react-icons/fa';
+import LogoIntro from '../images/logo-intro.png';
 
 const HomeIntro: React.FC = () => {
   return (
-    <Flex
-      alignItems="center"
-      background="linear-gradient(90deg, rgba(36,8,66,1) 0%, rgba(17,6,41,1) 50%, rgba(14,6,37,1) 100%)"
-    >
-      <Flex w="full" p={32} py={60} direction="column" alignItems="center">
+    <Flex alignItems="center">
+      <Flex w="50%" p={20} py={60} direction="column" alignItems="center">
         <Heading
           as="h1"
-          fontWeight={800}
+          fontWeight={700}
           textTransform="uppercase"
           fontSize={54}
           color="#FFF"
@@ -24,11 +23,15 @@ const HomeIntro: React.FC = () => {
           Proton Tech
         </Heading>
 
-        <Heading as="h3" mt={10} fontSize={24} textAlign="justify" fontWeight={500} lineHeight="24px" color="#909EC6">
+        <Heading as="h3" mt={16} fontSize={24} textAlign="justify" fontWeight={500} lineHeight="24px" color="#909EC6">
           Siêu tiện ích công nghệ
         </Heading>
 
-        <ButtonPrimary title="Khám phá ngay" rightIcon={<FaArrowRight />} mt={12} />
+        <ButtonPrimary title="Khám phá ngay" rightIcon={<FaArrowRight />} mt={16} />
+      </Flex>
+
+      <Flex w="50%" align="center" justify="center" pr={32}>
+        <Image src={LogoIntro} alt="logo intro proton tech" width={800} height={600} />
       </Flex>
     </Flex>
   );

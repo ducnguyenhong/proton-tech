@@ -1,36 +1,27 @@
-import { FaBlog, FaGlobeAmericas, FaHome, FaMobileAlt, FaShareAlt } from 'react-icons/fa';
-import { IconType } from 'react-icons/lib';
-
 interface MenuItem {
   title: string;
   route: string;
-  icon?: IconType;
 }
 
 export const MENU_DATA: MenuItem[] = [
   {
-    title: 'Trang chủ',
-    route: '/',
-    icon: FaHome
+    title: 'Home',
+    route: '/'
   },
   {
-    title: 'Website',
-    route: '/dich-vu-website',
-    icon: FaGlobeAmericas
+    title: 'Technology',
+    route: '/technology'
   },
   {
-    title: 'Mobile App',
-    route: '/dich-vu-mobile-app',
-    icon: FaMobileAlt
+    title: 'Service',
+    route: '/service'
   },
   {
-    title: 'Dịch vụ',
-    route: '/danh-sach-dich-vu',
-    icon: FaShareAlt
+    title: 'Studio',
+    route: '/studio'
   },
   {
     title: 'Blog',
-    route: '/blog',
-    icon: FaBlog
+    route: '/blog'
   }
 ];

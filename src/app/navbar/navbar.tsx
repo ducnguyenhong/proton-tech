@@ -3,6 +3,7 @@ import { Button, Flex, Icon, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { memo, useCallback, useEffect } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import { useRecoilState } from 'recoil';
 import Menu from './menu';
@@ -21,9 +22,8 @@ const Navbar: React.FC = () => {
     <Flex
       h="80px"
       w="full"
-      // background="linear-gradient(90deg, rgba(36,8,66,1) 0%, rgba(17,6,41,1) 50%, rgba(14,6,37,1) 100%)"
       position="fixed"
-      bgGradient="linear(to-r, rgba(36,8,66,1), rgba(17,6,41,1),rgba(14,6,37,1))"
+      bgGradient="linear(to-r, rgba(36,8,66,1), rgba(17,6,41,1), rgba(14,6,37,1))"
       top={0}
       left={0}
       borderBottom={activeNavbar ? '1px solid #29126e' : '1px solid transparent'}
@@ -53,11 +53,11 @@ const Navbar: React.FC = () => {
         </Link>
       </Flex>
 
-      <Flex alignItems="center">
+      <Flex align="center">
         <Menu />
       </Flex>
 
-      <Flex>
+      <Flex gap={6} align="center">
         <Button
           color="#FFF"
           bgColor="transparent"
@@ -78,6 +78,38 @@ const Navbar: React.FC = () => {
             transitionDuration="300ms"
           />
         </Button>
+
+        <Flex>
+          <Button
+            w={7}
+            h={7}
+            p={0}
+            minW={0}
+            bgColor="transparent"
+            borderRadius="full"
+            _hover={{ bgColor: 'transparent' }}
+            _active={{ bgColor: 'transparent' }}
+          >
+            <Image src="/images/icon-vietnam-flag.png" alt="vietnam language" fill />
+          </Button>
+        </Flex>
+
+        <Flex bgColor="#e6e6e6" gap={0.5} align="center" borderRadius="full" px={1} py={1}>
+          <Button w={7} h={7} borderRadius="full" p={0} minW={0} bgColor="transparent">
+            <FaSun />
+          </Button>
+          <Button
+            w={7}
+            h={7}
+            borderRadius="full"
+            p={0}
+            minW={0}
+            bgGradient="linear(to-r, #7855FF, #491BFF)"
+            _hover={{ bgGradient: 'linear(to-r, #7855FF, #491BFF)' }}
+          >
+            <FaMoon color="#FFF" />
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
   );

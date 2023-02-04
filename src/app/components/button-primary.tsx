@@ -27,8 +27,8 @@ interface ButtonProps {
 const ButtonPrimary: React.FC<ButtonProps> = (props) => {
   const {
     title,
-    w = 48,
-    h = '48px',
+    w = 60,
+    h = 14,
     leftIcon,
     rightIcon,
     mt,
@@ -50,7 +50,7 @@ const ButtonPrimary: React.FC<ButtonProps> = (props) => {
 
   return (
     <Button
-      bgColor="secondary.1"
+      bgGradient="linear(to-r, rgba(140,40,199,1), rgba(113,46,223,1), rgba(85,52,248,1))"
       h={h}
       w={w}
       color="#FFF"
@@ -72,9 +72,16 @@ const ButtonPrimary: React.FC<ButtonProps> = (props) => {
       leftIcon={leftIcon}
       rightIcon={rightIcon}
       fontWeight={700}
-      fontSize={16}
+      fontSize={18}
+      opacity={0.85}
       onClick={onClick}
-      _hover={{ bgColor: 'secondary.2' }}
+      transitionDuration="400ms"
+      _hover={{
+        bgColor: 'secondary.2',
+        opacity: 1,
+        transform: 'scale(1.03)',
+        boxShadow: '0px 0px 4px 1px rgb(255 255 255)'
+      }}
       _active={{ bgColor: 'secondary.3' }}
     >
       {title}

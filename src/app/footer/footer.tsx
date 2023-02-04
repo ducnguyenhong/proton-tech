@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <Box bgColor="#343455" color="#FFF" mt={60} px={60} pt={20} pb={10}>
+    <Box bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)" color="#FFF" pt={60} px={60} pb={10}>
       <Flex flex={1}>
         <Flex flex={1 / 4} flexDirection="column">
           <Image src={Logo} alt="logo" height={70} />
