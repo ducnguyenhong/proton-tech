@@ -1,20 +1,20 @@
 'use client';
 import { NextPage } from 'next';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import HomeCustomer from './subs/customer';
+import HomeBlog from './subs/blog';
 import HomeIntro from './subs/intro';
-import HomeNews from './subs/news';
-import HomeReason from './subs/reason';
 import HomeService from './subs/service';
+import HomeStudio from './subs/studio';
+import HomeTech from './subs/technology';
 
 const Home: NextPage = () => {
   return (
     <div>
       <HomeIntro />
-      <HomeCustomer />
+      <HomeTech />
       <HomeService />
-      <HomeReason />
-      <HomeNews />
+      <HomeStudio />
+      <HomeBlog />
     </div>
   );
 };

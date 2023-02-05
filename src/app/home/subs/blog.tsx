@@ -7,7 +7,7 @@ import { memo } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import ImgNews from '../images/news.png';
 
-const HomeNews: React.FC = () => {
+const HomeBlog: React.FC = () => {
   const SERVICE_DATA = [
     {
       id: 'abcde',
@@ -34,17 +34,11 @@ const HomeNews: React.FC = () => {
 
   return (
     <Flex alignItems="center" flexDirection="column" mt={80} px={80}>
-      <Heading as="h5" fontSize={18} color="secondary.1">
-        Tin tức
+      <Heading as="h4" fontSize={35} mt={3} color="#FAFBFB">
+        Proton Blog
       </Heading>
-      <Box w={16} h="px" bgColor="secondary.1" mt={1} />
-      <Heading as="h4" fontSize={35} mt={3} color="primary.1">
-        Cập nhật các thông tin mới về Công Nghệ
-      </Heading>
-      <Text mt={5} textAlign="center" color="text.2">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry
-        <br />
-        Lorem Ipsum has been the industry standard dummy text ever since the 1500s
+      <Text mt={5} fontSize={20} color="text.2">
+        Cập nhật các tin tức mới
       </Text>
 
       <Flex w="full" gap={14} mt={10}>
@@ -97,4 +91,4 @@ const HomeNews: React.FC = () => {
   );
 };
 
-export default memo(HomeNews);
+export default memo(HomeBlog);
