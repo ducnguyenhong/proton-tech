@@ -50,10 +50,10 @@ const HomeService: React.FC = () => {
       py={20}
     >
       <Heading as="h4" fontSize={35} mt={3} color="#FAFBFB">
-        Proton Service - Dịch vụ tiện ích về Công Nghệ
+        Proton Service
       </Heading>
       <Text mt={5} fontSize={20} textAlign="center" color="text.2">
-        Lorem Ipsum is simply dummy text of the printing <br /> and typesetting industry dummy text ever since the 1500s
+        Cung cấp các dịch vụ tiện ích về Công Nghệ
       </Text>
 
       <Flex w="full" columnGap={20} rowGap={28} mt={28} flexWrap="wrap">

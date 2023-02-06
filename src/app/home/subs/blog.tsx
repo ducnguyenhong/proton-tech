@@ -33,7 +33,7 @@ const HomeBlog: React.FC = () => {
   ];
 
   return (
-    <Flex alignItems="center" flexDirection="column" mt={80} px={80}>
+    <Flex alignItems="center" flexDirection="column" mt={80} px={60}>
       <Heading as="h4" fontSize={35} mt={3} color="#FAFBFB">
         Proton Blog
       </Heading>

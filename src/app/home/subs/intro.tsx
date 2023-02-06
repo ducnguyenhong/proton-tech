@@ -20,6 +20,7 @@ const HomeIntro: React.FC = () => {
       backgroundRepeat="no-repeat"
       pos="relative"
       py={20}
+      px={60}
     >
       <Box
         pos="absolute"
