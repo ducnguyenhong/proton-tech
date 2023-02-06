@@ -4,27 +4,32 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
+import LogoFacebook from '../images/facebook-studio.png';
+import LogoInstagram from '../images/instagram-studio.png';
+import ImgIntro from '../images/intro-studio.png';
+import LogoTiktok from '../images/tiktok-studio.png';
+import LogoYoutube from '../images/youtube-studio.png';
 
 const HomeStudio: React.FC = () => {
   const SOCIAL_DATA = [
     {
       url: 'https://www.facebook.com/prstudiovn',
-      image: '',
+      image: LogoFacebook,
       title: 'Facebook'
     },
     {
       url: 'https://www.youtube.com/channel/UCLO94_1jrZLbzLJdsxsjrGA',
-      image: '',
+      image: LogoYoutube,
       title: 'Youtube'
     },
     {
       url: 'https://www.tiktok.com/@protonstudio',
-      image: '',
+      image: LogoTiktok,
       title: 'Tiktok'
     },
     {
       url: 'https://www.instagram.com/protonstudiovn',
-      image: '',
+      image: LogoInstagram,
       title: 'Instagram'
     }
   ];
@@ -45,7 +50,7 @@ const HomeStudio: React.FC = () => {
               const { title, url, image } = item;
               return (
                 <Link href={url} key={title} target="_blank" rel="noopener noreferrer">
-                  <Flex w={20} h={20} border="1px solid #CCC">
+                  <Flex w={20} h={20}>
                     <Image src={image} alt={title} />
                   </Flex>
                 </Link>
@@ -57,12 +62,7 @@ const HomeStudio: React.FC = () => {
         </Box>
 
         <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center">
-          <Image
-            src="https://img.freepik.com/free-vector/dark-themed-mobile-phone-surrounded-by-apps_52683-23826.jpg?w=826&t=st=1675682713~exp=1675683313~hmac=44353ccd21a0c817d3fa4f6d3f71c6cdd2c184515c05a5efef0d083dbb9bd9c1"
-            alt="img"
-            width={500}
-            height={700}
-          />
+          <Image src={ImgIntro} alt="img" width={600} height={580} />
         </Flex>
       </Flex>
     </Flex>
