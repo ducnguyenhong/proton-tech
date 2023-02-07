@@ -1,32 +1,34 @@
 'use client';
 import { Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import { FaAdversal, FaFileContract, FaGlobeAmericas, FaMobileAlt, FaThLarge } from 'react-icons/fa';
 
 const HomeService: React.FC = () => {
-  const [service, setService] = useState('website');
-
   const SERVICE_DATA = [
     {
       title: 'Website',
       icon: FaGlobeAmericas,
-      service: 'website'
+      service: 'website',
+      description: 'Thiết kế và xây dựng Website đa nền tảng'
     },
     {
       title: 'Mobile App',
       icon: FaMobileAlt,
-      service: 'mobile-app'
+      service: 'mobile-app',
+      description: 'Thiết kế và xây dựng Ứng dụng Mobile'
     },
     {
       title: 'Content Marketing',
       icon: FaFileContract,
-      service: 'content-marketing'
+      service: 'content-marketing',
+      description: 'Dịch vụ viết nội dung cho Marketing'
     },
     {
       title: 'Advertising',
       icon: FaAdversal,
-      service: 'ads'
+      service: 'advertising',
+      description: 'Chạy quảng cáo trên mọi nền tảng'
     },
     {
       title: 'Khác',
@@ -36,7 +38,8 @@ const HomeService: React.FC = () => {
     {
       title: 'Khác2',
       icon: FaThLarge,
-      service: 'other2'
+      service: 'other2',
+      description: 'Xem thêm rất nhiều dịch vụ tiện ích khác'
     }
   ];
 
@@ -53,14 +56,14 @@ const HomeService: React.FC = () => {
         Proton Service
       </Heading>
       <Text mt={5} fontSize={20} textAlign="center" color="text.2">
-        Cung cấp các dịch vụ tiện ích về Công Nghệ
+        Cung cấp các dịch vụ Công Nghệ, Marketing
       </Text>
 
       <Flex w="full" columnGap={20} rowGap={28} mt={28} flexWrap="wrap">
         {SERVICE_DATA.map((item) => {
-          const { icon, title, service } = item;
+          const { icon, title, service, description } = item;
           return (
-            <Flex key={title} w="28%" direction="column" borderRadius={4} gap={10} align="center">
+            <Flex key={title} w="28%" direction="column" borderRadius={4} gap={8} align="center">
               <Flex w={20} h={20} bgColor="#10194D" borderRadius={5} justify="center" align="center">
                 <Icon as={icon} color="#4A6CF7" fontSize={40} />
               </Flex>
@@ -70,7 +73,7 @@ const HomeService: React.FC = () => {
                 </Heading>
               </Link>
               <Text fontSize={18} letterSpacing={0.5} color="text.2" textAlign="center">
-                Lorem Ipsum is simply dummy text of the printing text of the printing
+                {description}
               </Text>
             </Flex>
           );
