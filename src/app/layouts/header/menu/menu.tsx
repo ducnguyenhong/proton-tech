@@ -28,10 +28,12 @@ const Menu: React.FC = () => {
                 data-group
               >
                 <Text
-                  color={isActive ? '#FFF' : '#ccc'}
+                  bgGradient="linear(to-l, #7928CA, #FF0080)"
+                  opacity={isActive ? 1 : 0.75}
+                  bgClip="text"
                   fontSize={19}
                   fontWeight={600}
-                  _groupHover={{ color: '#FFF' }}
+                  _groupHover={{ opacity: 1 }}
                   transitionDuration="400ms"
                 >
                   {title}

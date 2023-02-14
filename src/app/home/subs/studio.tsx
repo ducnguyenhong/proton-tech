@@ -35,17 +35,17 @@ const HomeStudio: React.FC = () => {
   ];
 
   return (
-    <Flex flexDirection="column" mt={60} px={60}>
+    <Flex flexDirection="column" mt={60} px={80}>
       <Flex mt={16} w="full" gap={16}>
         <Box w="45%">
-          <Heading as="h4" fontSize={35} mt={3} color="#FAFBFB">
+          <Heading as="h4" fontSize={35} mt={3} color="red">
             Proton Studio
           </Heading>
           <Text mt={5} fontSize={20} color="text.2">
             Proton Studio hiện đang có mặt trên đa nền tảng
           </Text>
 
-          <Flex justify="space-between" w="full" gap={10} mt={20}>
+          <Flex justify="space-between" w="full" mt={20} pr={20}>
             {SOCIAL_DATA.map((item) => {
               const { title, url, image } = item;
               return (
@@ -61,7 +61,7 @@ const HomeStudio: React.FC = () => {
           <ButtonPrimary title="Xem chi tiết" mt={16} />
         </Box>
 
-        <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center">
+        <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center" pl={40}>
           <Image src={ImgIntro} alt="img" width={600} height={580} />
         </Flex>
       </Flex>

@@ -11,22 +11,12 @@ import LogoIntro from '../images/logo-intro.png';
 
 const HomeIntro: React.FC = () => {
   return (
-    <Flex
-      alignItems="center"
-      justifyContent="center"
-      gap={32}
-      bgImage={`url(https://img.freepik.com/free-vector/blue-background-with-particles-wave_1017-33654.jpg?w=1480&t=st=1675610315~exp=1675610915~hmac=61c5c294ccab44e47d5768b9e6f9a0dae375b7f6f94d815f97ac43bbda807289)`}
-      bgSize="cover"
-      backgroundRepeat="no-repeat"
-      pos="relative"
-      py={20}
-      px={60}
-    >
+    <Flex alignItems="center" justifyContent="center" gap={32} pos="relative" py={20} px={60}>
       <Box
         pos="absolute"
         w="full"
         h="full"
-        bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)"
+        // bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)"
         opacity={0.85}
         top={0}
         left={0}

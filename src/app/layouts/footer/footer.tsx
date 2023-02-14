@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer>
-      <Box bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)" color="#FFF" pt={60} px={60} pb={10}>
+      <Box bgColor="#29293D" color="#FFF" mt={60} pt={32} px={80} pb={10}>
         <Flex flex={1}>
           <Flex flex={1 / 4} flexDirection="column">
             <Image src={Logo} alt="logo" height={70} />
