@@ -1,4 +1,4 @@
-const getSize = (w) => {
+const getSize = (w: any) => {
   if (typeof w === 'undefined') {
     return undefined;
   }
@@ -14,7 +14,7 @@ const getSize = (w) => {
   return `${w}rem`;
 };
 
-export const getImageSizes = (w) => {
+export const getImageSizes = (w: any) => {
   if (typeof w !== 'object') {
     return getSize(w);
   }
@@ -38,7 +38,7 @@ export const getImageSizes = (w) => {
 export const getBlurDataURL = (r = 233, g = 233, b = 233) => {
   const keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
-  const triplet = (e1, e2, e3) =>
+  const triplet = (e1: number, e2: number, e3: number) =>
     keyStr.charAt(e1 >> 2) +
     keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
     keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +

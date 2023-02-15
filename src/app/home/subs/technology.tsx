@@ -8,10 +8,10 @@ const HomeTech: React.FC = () => {
   return (
     <Flex align="center" justifyContent="center" mt={60} gap={10} mx={60} py={10}>
       <Flex w="40%">
-        <Image src={ImgIntro} alt="Proton Tech" width={300} />
+        <Image src={ImgIntro} alt="Proton Tech" width={300} quality={100} />
       </Flex>
       <Flex w="60%" direction="column">
-        <Heading as="h4" fontSize={35} mt={3} color="#FAFBFB">
+        <Heading as="h4" fontSize={35} mt={3} color="red">
           Proton Tech
         </Heading>
         <Text mt={5} fontSize={20} color="text.2">

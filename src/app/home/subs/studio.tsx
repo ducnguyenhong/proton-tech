@@ -42,10 +42,12 @@ const HomeStudio: React.FC = () => {
             Proton Studio
           </Heading>
           <Text mt={5} fontSize={20} color="text.2">
-            Proton Studio hiện đang có mặt trên đa nền tảng
+            Chỉ là một studio nhỏ lưu trữ các video thú vị
+            <br />
+            PR Studio hiện đang có mặt trên đa nền tảng
           </Text>
 
-          <Flex justify="space-between" w="full" mt={20} pr={20}>
+          <Flex justify="space-between" w="full" mt={10} pr={20}>
             {SOCIAL_DATA.map((item) => {
               const { title, url, image } = item;
               return (
@@ -62,7 +64,7 @@ const HomeStudio: React.FC = () => {
         </Box>
 
         <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center" pl={40}>
-          <Image src={ImgIntro} alt="img" width={600} height={580} />
+          <Image src={ImgIntro} alt="img" width={600} height={580} quality={100} />
         </Flex>
       </Flex>
     </Flex>

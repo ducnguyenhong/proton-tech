@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { memo, useCallback, useMemo, useState } from 'react';
 import { getBlurDataURL, getImageSizes } from './image.helper';
 
-const Image = (props) => {
+const Image = (props: any) => {
   const [hasError, setHasError] = useState(false);
   const {
     src,
-    alt = 'vndirect image',
+    alt = 'proton tech image',
     borderRadius,
     onLoaded,
     onError,
@@ -27,7 +27,7 @@ const Image = (props) => {
   const blurDataURL = useMemo(() => getBlurDataURL(), []);
 
   const onLoadError = useCallback(
-    (e) => {
+    (e: any) => {
       setHasError(true);
       onError && onError(e);
     },

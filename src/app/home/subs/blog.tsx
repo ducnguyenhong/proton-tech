@@ -48,7 +48,7 @@ const HomeBlog: React.FC = () => {
             <Link href={url} key={id} style={{ display: 'block', width: '30%' }}>
               <Box w="full" h={60} bgColor="red" borderRadius={4} overflow="hidden" position="relative">
                 <Box position="absolute" top={0} left={0} w="full" h="full" zIndex={1}>
-                  <Image src={thumbnail} alt={title} />
+                  <Image src={thumbnail} alt={title} quality={100} />
                 </Box>
                 <Box
                   position="absolute"

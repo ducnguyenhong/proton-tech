@@ -66,11 +66,11 @@ const HomeService: React.FC = () => {
           return (
             <Link href={`/service/${service}`} key={title} style={{ display: 'block', width: '28%' }}>
               <Flex direction="column" borderRadius={4} gap={6} align="center">
-                <Flex w={20} h={20} bgColor="#ffccff" borderRadius={5} justify="center" align="center">
-                  <Icon as={icon} color="#800080" fontSize={40} />
+                <Flex w={20} h={20} bgColor="#f5e9fc" borderRadius={5} justify="center" align="center">
+                  <Icon as={icon} color="#7f1bb1" fontSize={40} />
                 </Flex>
 
-                <Heading as="h3" fontSize={24} letterSpacing={0.5} color="#cc00cc" textAlign="center">
+                <Heading as="h3" fontSize={24} letterSpacing={0.5} color="#7f1bb1" textAlign="center">
                   {title}
                 </Heading>
 
