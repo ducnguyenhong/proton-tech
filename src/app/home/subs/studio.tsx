@@ -42,7 +42,7 @@ const HomeStudio: React.FC = () => {
             Proton Studio
           </Heading>
           <Text mt={5} fontSize={20} color="text.2">
-            Chỉ là một studio nhỏ lưu trữ các video thú vị
+            Là một studio nhỏ lưu trữ các video thú vị
             <br />
             PR Studio hiện đang có mặt trên đa nền tảng
           </Text>

@@ -5,19 +5,19 @@ interface MenuItem {
 
 export const MENU_DATA: MenuItem[] = [
   {
-    title: 'Home',
+    title: 'Trang chủ',
     route: '/'
   },
   {
-    title: 'Technology',
+    title: 'Công nghệ',
     route: '/technology'
   },
   {
-    title: 'Service',
+    title: 'Dịch vụ',
     route: '/service'
   },
   {
-    title: 'Studio',
+    title: 'PR Studio',
     route: '/studio'
   },
   {

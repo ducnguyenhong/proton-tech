@@ -45,14 +45,7 @@ const HomeService: React.FC = () => {
   ];
 
   return (
-    <Flex
-      alignItems="center"
-      flexDirection="column"
-      mt={60}
-      px={80}
-      // bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)"
-      py={20}
-    >
+    <Flex alignItems="center" flexDirection="column" mt={60} px={80} bgColor="#E7ECEF" py={20}>
       <Heading as="h4" fontSize={35} mt={3} color="red">
         Proton Service
       </Heading>

@@ -2,7 +2,7 @@
 import { Button, Flex, Icon, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useRecoilState } from 'recoil';
 import Menu from './menu';
@@ -11,7 +11,6 @@ import { activeNavbarAtom } from './navbar.recoil';
 const Header: React.FC = () => {
   const [activeNavbar, setActiveNavbar] = useRecoilState(activeNavbarAtom);
   const handleScroll = useCallback(() => setActiveNavbar(window.pageYOffset > 50), [setActiveNavbar]);
-  const [language, setLanguage] = useState('vi');
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
