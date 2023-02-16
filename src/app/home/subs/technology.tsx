@@ -6,7 +6,7 @@ import ImgIntro from '../images/img-home-tech.png';
 
 const HomeTech: React.FC = () => {
   return (
-    <Flex align="center" justifyContent="center" mt={60} gap={10} mx={60} py={10}>
+    <Flex align="center" justifyContent="center" mt={40} gap={10} mx={60} py={10}>
       <Flex w="40%">
         <Image src={ImgIntro} alt="Proton Tech" width={300} quality={100} />
       </Flex>

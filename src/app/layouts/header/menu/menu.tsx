@@ -3,10 +3,13 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { memo } from 'react';
+import { useRecoilValue } from 'recoil';
+import { activeNavbarAtom } from '../navbar.recoil';
 import { MENU_DATA } from './menu.data';
 
 const Menu: React.FC = () => {
   const pathname = usePathname();
+  const activeNavbar = useRecoilValue(activeNavbarAtom);
 
   return (
     <Flex>
@@ -28,12 +31,9 @@ const Menu: React.FC = () => {
                 data-group
               >
                 <Text
-                  bgGradient="linear(to-l, #7928CA, #FF0080)"
-                  opacity={isActive ? 1 : 0.75}
-                  bgClip="text"
+                  color={activeNavbar ? 'purple.600' : '#FFF'}
                   fontSize={19}
                   fontWeight={600}
-                  _groupHover={{ opacity: 1 }}
                   transitionDuration="400ms"
                 >
                   {title}
@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
                   h={isActive ? 0.5 : '1px'}
                   w={isActive ? 0.5 : 0}
                   borderRadius="full"
-                  bgColor="#4E2CD6"
+                  bgColor="#FFF"
                   transitionDuration="400ms"
                   _groupHover={{
                     w: isActive ? 0.5 : '80%'

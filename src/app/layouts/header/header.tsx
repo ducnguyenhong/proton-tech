@@ -24,35 +24,34 @@ const Header: React.FC = () => {
         h="80px"
         w="full"
         position="fixed"
-        // bgGradient="linear(to-r, rgba(36,8,66,1), rgba(17,6,41,1), rgba(14,6,37,1))"
         top={0}
         left={0}
-        bgColor="#FFF"
+        bgColor={activeNavbar ? '#FFF' : 'transparent'}
         alignItems="center"
+        boxShadow={activeNavbar ? 'base' : 'none'}
         justifyContent="space-between"
-        boxShadow="base"
         px={28}
         transitionDuration="300ms"
         zIndex={100}
       >
-        <Flex>
+        <Flex w={44}>
           <Link href="/">
             <Flex alignItems="center" gap={3}>
-              <Image src="/images/logo.png" width={40} height={40} alt="logo" />
+              <Image
+                src={activeNavbar ? '/images/logo-active.png' : '/images/logo.png'}
+                width={40}
+                height={40}
+                alt="logo"
+              />
               <Text
                 as="h3"
-                color={activeNavbar ? '#FFF' : 'primary.1'}
+                color={activeNavbar ? 'primary.1' : '#FFF'}
                 fontWeight={600}
                 fontSize={20}
                 transitionDuration="300ms"
               >
                 Proton{' '}
-                <Text
-                  as="span"
-                  color={activeNavbar ? '#FFF' : 'secondary.1'}
-                  fontWeight={400}
-                  transitionDuration="300ms"
-                >
+                <Text as="span" color={activeNavbar ? 'primary.1' : '#FFF'} fontWeight={400} transitionDuration="300ms">
                   Tech
                 </Text>
               </Text>
@@ -64,7 +63,7 @@ const Header: React.FC = () => {
           <Menu />
         </Flex>
 
-        <Flex pos="relative">
+        <Flex pos="relative" w={44}>
           <Flex gap={6} align="center" pos="absolute" top={0} bottom={0} right={0}>
             <Button
               color="#FFF"
