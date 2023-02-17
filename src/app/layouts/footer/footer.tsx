@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Icon, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, Flex, Icon, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from 'public/images/logo.png';
@@ -67,9 +67,9 @@ const Footer: React.FC = () => {
           <Flex flex={1 / 4}>1</Flex>
 
           <Flex flex={1 / 4} flexDirection="column">
-            <Heading as="h5" fontSize={16} fontWeight={500} textTransform="uppercase">
+            <Text fontSize={16} fontWeight={700} textTransform="uppercase">
               Liên hệ
-            </Heading>
+            </Text>
             <Flex flexDirection="column" gap={1.5} mt={5}>
               {CONTACT_DATA.map((item) => {
                 const { url, icon, title, isNewTab } = item;
@@ -91,9 +91,9 @@ const Footer: React.FC = () => {
           </Flex>
 
           <Flex flex={1 / 4} flexDirection="column">
-            <Heading as="h5" fontSize={16} fontWeight={500} textTransform="uppercase">
+            <Text fontSize={16} fontWeight={700} textTransform="uppercase">
               Về chúng tôi
-            </Heading>
+            </Text>
             <UnorderedList mt={5} pl={3}>
               {ABOUT_US_DATA.map((item) => {
                 const { url, title } = item;
@@ -107,9 +107,11 @@ const Footer: React.FC = () => {
           </Flex>
         </Flex>
 
-        <Heading as="h3" fontSize={16} mt={20} textAlign="center" fontWeight={500}>
+        <Box w="100%" h="1px" bgColor="#FFF" mt={14} mx="auto" opacity={0.2} />
+
+        <Text fontSize={16} textAlign="center" fontWeight={500} mt={8}>
           © Copyright 2023 - Bản quyền thuộc về Proton Tech
-        </Heading>
+        </Text>
       </Box>
     </footer>
   );

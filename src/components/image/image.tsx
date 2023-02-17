@@ -20,7 +20,8 @@ const Image = (props: any) => {
     h = '100%',
     imgWidth,
     imgHeight,
-    fill = true
+    fill = true,
+    opacity = 1
   } = props;
 
   const sizes = useMemo(() => getImageSizes(w), [w]);
@@ -35,7 +36,7 @@ const Image = (props: any) => {
   );
 
   return (
-    <Flex w={w} h={h} position="relative">
+    <Flex w={w} h={h} position="relative" opacity={opacity}>
       <NextImage
         src={hasError ? fallback : src}
         alt={alt}

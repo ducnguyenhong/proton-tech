@@ -1,11 +1,11 @@
 'use client';
-import { Section } from '@/components';
-import Image from '@/components/image';
-import { Flex, Heading, Icon, Text } from '@chakra-ui/react';
+import { Image, Section } from '@/components';
+import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaAdversal, FaFileContract, FaGlobeAmericas, FaMobileAlt, FaThLarge } from 'react-icons/fa';
-import ImgWave from '../../images/wave-service.png';
+import BgService from '../../images/bg-service.png';
+import ImgShadow from '../../images/shadow-service.png';
 
 const HomeService: React.FC = () => {
   const SERVICE_DATA = [
@@ -22,7 +22,7 @@ const HomeService: React.FC = () => {
       description: 'Thiết kế và xây dựng Ứng dụng Mobile'
     },
     {
-      title: 'Content Marketing',
+      title: 'Marketing',
       icon: FaFileContract,
       service: 'content-marketing',
       description: 'Dịch vụ viết nội dung cho Marketing'
@@ -48,33 +48,50 @@ const HomeService: React.FC = () => {
   ];
 
   return (
-    <Flex alignItems="center" flexDirection="column" mt={60} px={80} bgColor="#E7ECEF" py={20}>
+    <Flex alignItems="center" flexDirection="column" mt={60} px={60} py={20}>
       <Section title="Proton Service" />
       <Text mt={5} fontSize={20} textAlign="center" color="text.2">
         Cung cấp các dịch vụ Công Nghệ, Marketing
       </Text>
 
-      <Flex mt={16}>
-        <Image src={ImgWave} alt="wave service" w="1100px" h="250px" />
-      </Flex>
-
-      <Flex w="full" columnGap={20} rowGap={20} mt={16} flexWrap="wrap">
+      <Flex
+        w="full"
+        columnGap={20}
+        rowGap={10}
+        mt={16}
+        flexWrap="wrap"
+        bgImage={`url(${BgService.src})`}
+        bgSize="cover"
+        bgRepeat="no-repeat"
+      >
         {SERVICE_DATA.map((item) => {
           const { icon, title, service, description } = item;
           return (
             <Link href={`/service/${service}`} key={title} style={{ display: 'block', width: '28%' }}>
-              <Flex direction="column" borderRadius={4} gap={6} align="center">
-                <Flex w={20} h={20} bgColor="#f5e9fc" borderRadius={5} justify="center" align="center">
-                  <Icon as={icon} color="#7f1bb1" fontSize={40} />
+              <Flex h={80}>
+                <Image src={ImgShadow} h="full" w={20} alt="shadow service" opacity={0.4} />
+                <Flex direction="column" gap={5} h="full" justify="center">
+                  <Box ml={5}>
+                    <Icon as={icon} color="#7f1bb1" fontSize={35} />
+                  </Box>
+
+                  <Flex
+                    clipPath="polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)"
+                    bgColor="red"
+                    w={52}
+                    h="70px"
+                    align="center"
+                    pl={5}
+                  >
+                    <Text fontSize={25} letterSpacing={0.5} fontWeight={600} color="#FFF">
+                      {title}
+                    </Text>
+                  </Flex>
+
+                  <Text fontSize={18} letterSpacing={0.5} color="text.2" ml={5}>
+                    {description}
+                  </Text>
                 </Flex>
-
-                <Heading as="h3" fontSize={24} letterSpacing={0.5} color="#7f1bb1" textAlign="center">
-                  {title}
-                </Heading>
-
-                <Text fontSize={18} letterSpacing={0.5} color="text.2" textAlign="center">
-                  {description}
-                </Text>
               </Flex>
             </Link>
           );
