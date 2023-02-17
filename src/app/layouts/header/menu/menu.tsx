@@ -31,7 +31,7 @@ const Menu: React.FC = () => {
                 data-group
               >
                 <Text
-                  color={activeNavbar ? 'purple.600' : '#FFF'}
+                  color={activeNavbar ? '#6B01A9' : '#FFF'}
                   fontSize={19}
                   fontWeight={600}
                   transitionDuration="400ms"
@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
                   h={isActive ? 0.5 : '1px'}
                   w={isActive ? 0.5 : 0}
                   borderRadius="full"
-                  bgColor="#FFF"
+                  bgColor={activeNavbar ? '#6B01A9' : '#FFF'}
                   transitionDuration="400ms"
                   _groupHover={{
                     w: isActive ? 0.5 : '80%'

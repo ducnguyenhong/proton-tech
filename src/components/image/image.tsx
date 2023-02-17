@@ -12,7 +12,7 @@ const Image = (props: any) => {
     borderRadius,
     onLoaded,
     onError,
-    quality,
+    quality = 100,
     priority,
     fallback,
     objectFit,

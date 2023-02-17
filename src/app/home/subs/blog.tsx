@@ -1,10 +1,10 @@
 'use client';
+import { Section } from '@/components';
 import ButtonPrimary from '@/components/button-primary';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
-import { FaChevronRight } from 'react-icons/fa';
 import ImgNews from '../images/news.png';
 
 const HomeBlog: React.FC = () => {
@@ -34,9 +34,7 @@ const HomeBlog: React.FC = () => {
 
   return (
     <Flex alignItems="center" flexDirection="column" mt={80} px={60}>
-      <Heading as="h4" fontSize={35} mt={3} color="red">
-        Proton Blog
-      </Heading>
+      <Section title="Proton Blog" />
       <Text mt={5} fontSize={20} color="text.2">
         Cập nhật các tin tức mới
       </Text>
@@ -86,7 +84,7 @@ const HomeBlog: React.FC = () => {
         })}
       </Flex>
 
-      <ButtonPrimary title="Xem thêm" mt={10} rightIcon={<FaChevronRight />} />
+      <ButtonPrimary title="Xem thêm" mt={10} />
     </Flex>
   );
 };

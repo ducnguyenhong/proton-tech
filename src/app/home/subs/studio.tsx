@@ -1,6 +1,7 @@
 'use client';
+import { Section } from '@/components';
 import ButtonPrimary from '@/components/button-primary';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -38,16 +39,14 @@ const HomeStudio: React.FC = () => {
     <Flex flexDirection="column" mt={60} px={80}>
       <Flex mt={16} w="full" gap={16}>
         <Box w="45%">
-          <Heading as="h4" fontSize={35} mt={3} color="red">
-            Proton Studio
-          </Heading>
-          <Text mt={5} fontSize={20} color="text.2">
+          <Section title="Proton Studio" />
+          <Text mt={8} fontSize={20} color="text.2">
             Là một studio nhỏ lưu trữ các video thú vị
             <br />
             PR Studio hiện đang có mặt trên đa nền tảng
           </Text>
 
-          <Flex justify="space-between" w="full" mt={10} pr={20}>
+          <Flex justify="space-between" w="full" pr={20} mt={12}>
             {SOCIAL_DATA.map((item) => {
               const { title, url, image } = item;
               return (
@@ -64,7 +63,7 @@ const HomeStudio: React.FC = () => {
         </Box>
 
         <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center" pl={40}>
-          <Image src={ImgIntro} alt="img" width={600} height={580} quality={100} />
+          <Image src={ImgIntro} alt="img" width={480} height={450} quality={100} />
         </Flex>
       </Flex>
     </Flex>

@@ -1,8 +1,11 @@
 'use client';
+import { Section } from '@/components';
+import Image from '@/components/image';
 import { Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaAdversal, FaFileContract, FaGlobeAmericas, FaMobileAlt, FaThLarge } from 'react-icons/fa';
+import ImgWave from '../../images/wave-service.png';
 
 const HomeService: React.FC = () => {
   const SERVICE_DATA = [
@@ -46,12 +49,14 @@ const HomeService: React.FC = () => {
 
   return (
     <Flex alignItems="center" flexDirection="column" mt={60} px={80} bgColor="#E7ECEF" py={20}>
-      <Heading as="h4" fontSize={35} mt={3} color="red">
-        Proton Service
-      </Heading>
+      <Section title="Proton Service" />
       <Text mt={5} fontSize={20} textAlign="center" color="text.2">
         Cung cấp các dịch vụ Công Nghệ, Marketing
       </Text>
+
+      <Flex mt={16}>
+        <Image src={ImgWave} alt="wave service" w="1100px" h="250px" />
+      </Flex>
 
       <Flex w="full" columnGap={20} rowGap={20} mt={16} flexWrap="wrap">
         {SERVICE_DATA.map((item) => {
