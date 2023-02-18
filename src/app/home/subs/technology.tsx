@@ -16,13 +16,13 @@ import ImgTech6 from '../images/technology-6.png';
 const HomeTech: React.FC = () => {
   const TECH_DATA = [
     {
-      title: 'Hình ảnh',
+      title: 'Làm nét ảnh',
       url: '/1',
       icon: FaImage,
       image: ImgTech1
     },
     {
-      title: 'Hình ảnh',
+      title: 'Đổi định dạng ảnh',
       url: '/2',
       icon: FaImage,
       image: ImgTech2
@@ -54,7 +54,7 @@ const HomeTech: React.FC = () => {
   ];
 
   return (
-    <Flex align="center" justifyContent="center" mt={40} gap={10} mx={80} py={10}>
+    <Flex align="center" justifyContent="center" mt={52} gap={10} mx={80} py={10}>
       <Flex w="40%" pt={8}>
         <Image src={ImgIntro} alt="Proton Tech" width={400} quality={100} />
       </Flex>
@@ -71,15 +71,24 @@ const HomeTech: React.FC = () => {
             const { url, title, icon, image } = item;
             return (
               <Link href={url} key={url} style={{ width: '31%', display: 'block' }}>
-                <Flex direction="column" justify="center" align="center">
+                <Flex direction="column" justify="center" align="center" data-group>
                   <Flex w="150px" h="140px" pos="relative" justify="center" align="center">
-                    <Box pos="absolute" w="full" h="full" top={0} left={0} zIndex={1}>
+                    <Box
+                      pos="absolute"
+                      w="full"
+                      h="full"
+                      top={0}
+                      left={0}
+                      zIndex={1}
+                      transitionDuration="350ms"
+                      _groupHover={{ transform: 'rotate(90deg)' }}
+                    >
                       <Image src={image} width={150} height={140} alt="tech" />
                     </Box>
                     <Icon as={icon} fontSize={25} zIndex={2} />
                   </Flex>
 
-                  <Text textAlign="center" mt={-2} fontWeight={600} fontSize={20}>
+                  <Text textAlign="center" mt={-2} fontWeight={600} fontSize={18}>
                     {title}
                   </Text>
                 </Flex>

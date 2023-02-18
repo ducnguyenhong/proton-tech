@@ -32,8 +32,10 @@ const Menu: React.FC = () => {
               >
                 <Text
                   color={activeNavbar ? '#6B01A9' : '#FFF'}
+                  bgGradient={activeNavbar ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
+                  bgClip="text"
                   fontSize={19}
-                  fontWeight={600}
+                  fontWeight={700}
                   transitionDuration="400ms"
                 >
                   {title}
@@ -44,7 +46,7 @@ const Menu: React.FC = () => {
                   h={isActive ? 0.5 : '1px'}
                   w={isActive ? 0.5 : 0}
                   borderRadius="full"
-                  bgColor={activeNavbar ? '#6B01A9' : '#FFF'}
+                  bgGradient={activeNavbar ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
                   transitionDuration="400ms"
                   _groupHover={{
                     w: isActive ? 0.5 : '80%'

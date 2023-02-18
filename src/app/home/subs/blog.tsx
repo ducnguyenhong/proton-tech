@@ -52,7 +52,7 @@ const HomeBlog: React.FC = () => {
           <Box w="full" boxShadow="base" overflow="hidden">
             <Link href="/">
               <AspectRatio ratio={16 / 9}>
-                <Image src={SERVICE_DATA[0].thumbnail} alt={SERVICE_DATA[0].title} quality={100} borderRadius={3} />
+                <Image src={SERVICE_DATA[0].thumbnail} alt={SERVICE_DATA[0].title} quality={100} />
               </AspectRatio>
             </Link>
 
@@ -105,7 +105,7 @@ const HomeBlog: React.FC = () => {
                 <Flex w="full" overflow="hidden" boxShadow="base">
                   <Link href="/">
                     <Box h={32} w={48}>
-                      <Image src={thumbnail} alt={title} quality={100} borderRadius={3} />
+                      <Image src={thumbnail} alt={title} quality={100} />
                     </Box>
                   </Link>
 
