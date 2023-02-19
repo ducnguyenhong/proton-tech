@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
 import { memo, MouseEventHandler, ReactElement } from 'react';
 
-interface ButtonProps {
+interface LinkGradientProps {
   title: string;
   w?: number | string;
   h?: number | string;
@@ -22,9 +22,10 @@ interface ButtonProps {
   m?: number | string;
   p?: number | string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  bgGradient?: string;
 }
 
-const ButtonPrimary: React.FC<ButtonProps> = (props) => {
+const ButtonGradient: React.FC<LinkGradientProps> = (props) => {
   const {
     title,
     w = '220px',
@@ -45,12 +46,13 @@ const ButtonPrimary: React.FC<ButtonProps> = (props) => {
     py,
     m,
     p,
-    onClick
+    onClick,
+    bgGradient = 'linear(to-r, rgba(140,40,199,1), rgba(113,46,223,1), rgba(85,52,248,1))'
   } = props;
 
   return (
     <Button
-      bgGradient="linear(to-r, rgba(140,40,199,1), rgba(113,46,223,1), rgba(85,52,248,1))"
+      bgGradient={bgGradient}
       h={h}
       w={w}
       color="#FFF"
@@ -90,4 +92,4 @@ const ButtonPrimary: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export default memo(ButtonPrimary);
+export default memo(ButtonGradient);

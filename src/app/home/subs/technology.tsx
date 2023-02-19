@@ -1,7 +1,6 @@
 'use client';
-import { Section } from '@/components';
+import { Image, Section } from '@/components';
 import { Box, Flex, Icon, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaImage } from 'react-icons/fa';
@@ -54,14 +53,14 @@ const HomeTech: React.FC = () => {
   ];
 
   return (
-    <Flex align="center" justifyContent="center" mt={52} gap={10} mx={80} py={10}>
-      <Flex w="40%" pt={8}>
-        <Image src={ImgIntro} alt="Proton Tech" width={400} quality={100} />
+    <Flex align="center" justifyContent="center" mt={52} gap={10} mx={{ xs: 5, lg: 80 }} py={10}>
+      <Flex w="40%" pt={8} display={{ xs: 'none', lg: 'flex' }}>
+        <Image src={ImgIntro} alt="Proton Tech" w="400px" h="480px" />
       </Flex>
-      <Flex w="60%" direction="column">
+      <Flex w={{ xs: '100%', lg: '60%' }} direction="column">
         <Flex direction="column" align="center">
           <Section title="Proton Tech" />
-          <Text mt={5} fontSize={20} color="text.2">
+          <Text mt={{ xs: 1, lg: 5 }} fontSize={{ xs: 15, lg: 20 }} color="text.2">
             Cung cấp các tiện ích Công Nghệ
           </Text>
         </Flex>
@@ -70,29 +69,36 @@ const HomeTech: React.FC = () => {
           {TECH_DATA.map((item) => {
             const { url, title, icon, image } = item;
             return (
-              <Link href={url} key={url} style={{ width: '31%', display: 'block' }}>
-                <Flex direction="column" justify="center" align="center" data-group>
-                  <Flex w="150px" h="140px" pos="relative" justify="center" align="center">
-                    <Box
-                      pos="absolute"
-                      w="full"
-                      h="full"
-                      top={0}
-                      left={0}
-                      zIndex={1}
-                      transitionDuration="350ms"
-                      _groupHover={{ transform: 'rotate(90deg)' }}
-                    >
-                      <Image src={image} width={150} height={140} alt="tech" />
-                    </Box>
-                    <Icon as={icon} fontSize={25} zIndex={2} />
-                  </Flex>
+              <Box key={url} w={{ xs: '48%', lg: '31%' }}>
+                <Link href={url} style={{ width: '100%', display: 'block' }}>
+                  <Flex direction="column" justify="center" align="center" data-group>
+                    <Flex w="150px" h="140px" pos="relative" justify="center" align="center">
+                      <Box
+                        pos="absolute"
+                        w="full"
+                        h="full"
+                        top={0}
+                        left={0}
+                        zIndex={1}
+                        transitionDuration="350ms"
+                        _groupHover={{ transform: 'rotate(90deg)' }}
+                      >
+                        <Image
+                          src={image}
+                          w={{ xs: '120px', lg: '150px' }}
+                          h={{ xs: '110px', lg: '140px' }}
+                          alt="tech"
+                        />
+                      </Box>
+                      <Icon as={icon} fontSize={25} zIndex={2} />
+                    </Flex>
 
-                  <Text textAlign="center" mt={-2} fontWeight={600} fontSize={18}>
-                    {title}
-                  </Text>
-                </Flex>
-              </Link>
+                    <Text textAlign="center" mt={-2} fontWeight={600} fontSize={18}>
+                      {title}
+                    </Text>
+                  </Flex>
+                </Link>
+              </Box>
             );
           })}
         </Flex>

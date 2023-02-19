@@ -4,8 +4,8 @@ import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaAdversal, FaFileContract, FaGlobeAmericas, FaMobileAlt, FaPencilRuler, FaThLarge } from 'react-icons/fa';
-import BgService from '../../images/bg-service.png';
-import ImgShadow from '../../images/shadow-service.png';
+import BgService from '../images/bg-service.png';
+import ImgShadow from '../images/shadow-service.png';
 
 const HomeService: React.FC = () => {
   const SERVICE_DATA = [
@@ -54,7 +54,7 @@ const HomeService: React.FC = () => {
   ];
 
   return (
-    <Flex alignItems="center" flexDirection="column" mt={60} px={60} py={20}>
+    <Flex alignItems="center" flexDirection="column" mt={{ xs: 10, lg: 60 }} px={{ xs: 5, lg: 60 }} py={20}>
       <Section title="Proton Service" />
       <Text mt={5} fontSize={20} textAlign="center" color="text.2">
         Cung cấp các dịch vụ tiện ích về Công Nghệ, Marketing, Content
@@ -62,7 +62,7 @@ const HomeService: React.FC = () => {
 
       <Flex
         w="full"
-        rowGap={10}
+        rowGap={{ xs: 4, lg: 10 }}
         justify="space-between"
         mt={16}
         flexWrap="wrap"
@@ -74,33 +74,38 @@ const HomeService: React.FC = () => {
           const { icon, title, service, description, bgGradient } = item;
           const iconColor = bgGradient.split(' ')[1];
           return (
-            <Link href={`/service/${service}`} key={title} style={{ display: 'block', width: '30%' }}>
-              <Flex h={80}>
-                <Image src={ImgShadow} h="full" w="70px" alt="shadow service" opacity={0.5} />
-                <Flex direction="column" gap={5} h="full" justify="center" flex={1}>
-                  <Box ml={5}>
-                    <Icon as={icon} color={iconColor} fontSize={35} />
-                  </Box>
+            <Box key={title} w={{ xs: '100%', lg: '30%' }}>
+              <Link href={`/service/${service}`} style={{ display: 'block', width: '100%' }}>
+                <Flex h={80} data-group>
+                  <Image src={ImgShadow} h="full" w="70px" alt="shadow service" opacity={0.5} />
+                  <Flex direction="column" gap={5} h="full" justify="center" flex={1}>
+                    <Box ml={5}>
+                      <Icon as={icon} color={iconColor} fontSize={35} />
+                    </Box>
 
-                  <Flex
-                    clipPath="polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)"
-                    bgGradient={`linear(to-r, ${bgGradient})`}
-                    w={48}
-                    h="70px"
-                    align="center"
-                    pl={5}
-                  >
-                    <Text fontSize={25} letterSpacing={0.5} fontWeight={600} color="#FFF">
-                      {title}
+                    <Flex
+                      title="Nhấn để xem chi tiết"
+                      clipPath="polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)"
+                      bgGradient={`linear(to-r, ${bgGradient})`}
+                      w={48}
+                      h="70px"
+                      align="center"
+                      pl={5}
+                      transitionDuration="300ms"
+                      _groupHover={{ w: 60 }}
+                    >
+                      <Text fontSize={25} letterSpacing={0.5} fontWeight={600} color="#FFF">
+                        {title}
+                      </Text>
+                    </Flex>
+
+                    <Text fontSize={17} letterSpacing={0.5} ml={5} fontWeight={600} h="50px">
+                      {description}
                     </Text>
                   </Flex>
-
-                  <Text fontSize={17} letterSpacing={0.5} ml={5} fontWeight={600} h="50px">
-                    {description}
-                  </Text>
                 </Flex>
-              </Flex>
-            </Link>
+              </Link>
+            </Box>
           );
         })}
       </Flex>

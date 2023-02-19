@@ -1,5 +1,5 @@
-import ButtonPrimary from './button-primary';
+import ButtonGradient from './button-gradient';
 import Image from './image';
 import Section from './section';
 
-export { Section, Image, ButtonPrimary };
+export { Section, Image, ButtonGradient };

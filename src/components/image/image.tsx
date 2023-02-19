@@ -8,7 +8,7 @@ const Image = (props: any) => {
   const [hasError, setHasError] = useState(false);
   const {
     src,
-    alt = 'proton tech image',
+    alt,
     borderRadius,
     onLoaded,
     onError,
@@ -39,7 +39,7 @@ const Image = (props: any) => {
     <Flex w={w} h={h} position="relative" opacity={opacity}>
       <NextImage
         src={hasError ? fallback : src}
-        alt={alt}
+        alt={`Proton Tech ${alt}`}
         fill={fill}
         sizes={sizes}
         width={imgWidth}

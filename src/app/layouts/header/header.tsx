@@ -1,6 +1,6 @@
 'use client';
+import { Image } from '@/components';
 import { Button, Flex, Icon, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { memo, useCallback, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
@@ -36,12 +36,7 @@ const Header: React.FC = () => {
         <Flex w={44}>
           <Link href="/">
             <Flex alignItems="center" gap={3}>
-              <Image
-                src={activeNavbar ? '/images/logo-active.png' : '/images/logo.png'}
-                width={40}
-                height={40}
-                alt="logo"
-              />
+              <Image src={activeNavbar ? '/images/logo-active.png' : '/images/logo.png'} w="40px" h="40px" alt="logo" />
               <Text
                 as="h3"
                 color={activeNavbar ? 'primary.1' : '#FFF'}
@@ -65,74 +60,26 @@ const Header: React.FC = () => {
         <Flex pos="relative" w={44}>
           <Flex gap={6} align="center" pos="absolute" top={0} bottom={0} right={0}>
             <Button
-              color="#FFF"
+              color={activeNavbar ? 'secondary.1' : '#FFF'}
               bgColor="transparent"
               borderRadius="full"
-              w="2.375rem"
-              h={9}
+              w="40px"
+              h="40px"
               minH={0}
               minW={0}
               p={0}
+              transitionDuration="300ms"
               _active={{ bgColor: 'transparent' }}
-              _hover={{ bgColor: activeNavbar ? '#FFF' : 'secondary.1' }}
+              _hover={{ bgColor: activeNavbar ? 'secondary.1' : '#FFF' }}
               data-group
             >
               <Icon
                 as={FiSearch}
                 fontSize={20}
-                _groupHover={{ color: activeNavbar ? 'secondary.1' : '#FFF' }}
+                _groupHover={{ color: activeNavbar ? '#FFF' : 'secondary.1' }}
                 transitionDuration="300ms"
               />
             </Button>
-
-            {/* <Tooltip label={`Chuyển sang ${language === 'vi' ? 'Tiếng Anh' : 'Tiếng Việt'}`}>
-              <Flex pos="relative" bgColor="#CCC" p={0.5} borderRadius="full" data-group>
-                <Flex w={7} h={7} borderRadius="full" pos="relative">
-                  <Image
-                    src={language === 'vi' ? '/images/icon-vietnam-flag.png' : '/images/icon-uk-flag.png'}
-                    alt="vietnam language"
-                    fill
-                  />
-                </Flex>
-                <Button
-                  pos="absolute"
-                  bgColor="transparent"
-                  visibility="hidden"
-                  opacity={0}
-                  w="full"
-                  h="full"
-                  borderRadius="full"
-                  p={0}
-                  minW={0}
-                  top={0}
-                  left={0}
-                  zIndex={2}
-                  _hover={{ bgColor: 'transparent' }}
-                  _active={{ bgColor: 'transparent' }}
-                  _groupHover={{ opacity: 1, visibility: 'visible', bgColor: '#00000075' }}
-                  onClick={() => setLanguage((prev) => (prev === 'vi' ? 'en' : 'vi'))}
-                >
-                  <FaSyncAlt color="#ccc" fontSize={13} />
-                </Button>
-              </Flex>
-            </Tooltip> */}
-
-            {/* <Flex bgColor="#e6e6e6" gap={0.5} align="center" borderRadius="full" p={1}>
-              <Button w={7} h={7} borderRadius="full" p={0} minW={0} bgColor="transparent">
-                <FaSun />
-              </Button>
-              <Button
-                w={7}
-                h={7}
-                borderRadius="full"
-                p={0}
-                minW={0}
-                bgGradient="linear(to-r, #7855FF, #491BFF)"
-                _hover={{ bgGradient: 'linear(to-r, #7855FF, #491BFF)' }}
-              >
-                <FaMoon color="#FFF" />
-              </Button>
-            </Flex> */}
           </Flex>
         </Flex>
       </Flex>

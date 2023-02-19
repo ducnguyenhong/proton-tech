@@ -1,8 +1,6 @@
 'use client';
-import { Section } from '@/components';
-import ButtonPrimary from '@/components/button-primary';
+import { ButtonGradient, Image, Section } from '@/components';
 import { AspectRatio, Box, Flex, Icon, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaRegCalendarAlt, FaUser } from 'react-icons/fa';
@@ -32,7 +30,7 @@ const HomeBlog: React.FC = () => {
       thumbnail: ImgNews
     },
     {
-      id: 'abcdg',
+      id: 'abcdh',
       title: 'Lorem Ipsum is simply dummy text of the printing',
       url: '/blog/4',
       createdAt: '28/01/2023',
@@ -41,18 +39,18 @@ const HomeBlog: React.FC = () => {
   ];
 
   return (
-    <Flex alignItems="center" flexDirection="column" mt={80} px={80}>
+    <Flex alignItems="center" flexDirection="column" mt={{ xs: 10, lg: 80 }} px={{ xs: 5, lg: 80 }}>
       <Section title="Proton Blog" />
       <Text mt={5} fontSize={20} color="text.2">
         Cập nhật các tin tức mới
       </Text>
 
-      <Flex w="full" justify="space-between" mt={14}>
-        <Box w="48.5%">
+      <Flex w="full" justify="space-between" mt={16} direction={{ xs: 'column', lg: 'row' }}>
+        <Box w={{ xs: '100%', lg: '47.5%' }}>
           <Box w="full" boxShadow="base" overflow="hidden">
             <Link href="/">
               <AspectRatio ratio={16 / 9}>
-                <Image src={SERVICE_DATA[0].thumbnail} alt={SERVICE_DATA[0].title} quality={100} />
+                <Image src={SERVICE_DATA[0].thumbnail} alt={SERVICE_DATA[0].title} />
               </AspectRatio>
             </Link>
 
@@ -97,59 +95,57 @@ const HomeBlog: React.FC = () => {
           </Box>
         </Box>
 
-        <Flex w="48.5%" flexWrap="wrap" direction="column" justify="space-between" h="auto">
+        <Flex w={{ xs: '100%', lg: '47.5%' }} flexWrap="wrap" direction="column" justify="space-between" h="auto">
           {SERVICE_DATA.map((item) => {
             const { url, createdAt, thumbnail, id, title } = item;
             return (
-              <Link href={url} key={id} style={{ display: 'block', width: '100%' }}>
-                <Flex w="full" overflow="hidden" boxShadow="base">
+              <Flex key={id} w="full" overflow="hidden" boxShadow="base" h={32}>
+                <Link href="/">
+                  <Box h={32} w={48}>
+                    <Image src={thumbnail} alt={title} />
+                  </Box>
+                </Link>
+
+                <Box px={5} py={3}>
                   <Link href="/">
-                    <Box h={32} w={48}>
-                      <Image src={thumbnail} alt={title} quality={100} />
-                    </Box>
+                    <Text fontWeight={700} fontSize={18} noOfLines={2} lineHeight="20px" h="40px">
+                      {title}
+                    </Text>
                   </Link>
 
-                  <Box px={5} py={3}>
-                    <Link href="/">
-                      <Text fontWeight={700} fontSize={18} noOfLines={2} lineHeight="20px">
-                        {title}
+                  <Flex mt={2} gap={10}>
+                    <Flex align="center" gap={1.5}>
+                      <Icon as={FaRegCalendarAlt} fontSize={12} color="#808080" />
+                      <Text fontWeight={500} fontSize={13} mt="2px" color="#808080">
+                        {createdAt}
                       </Text>
-                    </Link>
-
-                    <Flex mt={2} gap={10}>
-                      <Flex align="center" gap={1.5}>
-                        <Icon as={FaRegCalendarAlt} fontSize={12} color="#808080" />
-                        <Text fontWeight={500} fontSize={13} mt="2px" color="#808080">
-                          {createdAt}
-                        </Text>
-                      </Flex>
-
-                      <Flex align="center" gap={1.5}>
-                        <Icon as={FaUser} fontSize={12} color="#808080" />
-                        <Text fontWeight={500} fontSize={13} mt="2px" color="#808080">
-                          {createdAt}
-                        </Text>
-                      </Flex>
                     </Flex>
 
-                    <Flex gap={2} align="center" mt={2}>
-                      {[1, 2, 3].map((item) => (
-                        <Link href="/" key={item}>
-                          <Text color="#FFF" fontSize={13} px={2} py={0.5} borderRadius={4} bgColor="#81D742">
-                            Công nghệ
-                          </Text>
-                        </Link>
-                      ))}
+                    <Flex align="center" gap={1.5}>
+                      <Icon as={FaUser} fontSize={12} color="#808080" />
+                      <Text fontWeight={500} fontSize={13} mt="2px" color="#808080">
+                        {createdAt}
+                      </Text>
                     </Flex>
-                  </Box>
-                </Flex>
-              </Link>
+                  </Flex>
+
+                  <Flex gap={2} align="center" mt={2}>
+                    {[1, 2, 3].map((item) => (
+                      <Link href="/" key={item}>
+                        <Text color="#FFF" fontSize={13} px={2} py={0.5} borderRadius={4} bgColor="#81D742">
+                          Công nghệ
+                        </Text>
+                      </Link>
+                    ))}
+                  </Flex>
+                </Box>
+              </Flex>
             );
           })}
         </Flex>
       </Flex>
 
-      <ButtonPrimary title="Xem thêm" mt={16} />
+      <ButtonGradient title="Xem thêm" mt={16} />
     </Flex>
   );
 };

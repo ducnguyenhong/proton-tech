@@ -1,8 +1,6 @@
 'use client';
-import { Section } from '@/components';
-import ButtonPrimary from '@/components/button-primary';
+import { ButtonGradient, Image, Section } from '@/components';
 import { Box, Flex, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
 import LogoFacebook from '../images/facebook-studio.png';
@@ -36,9 +34,9 @@ const HomeStudio: React.FC = () => {
   ];
 
   return (
-    <Flex flexDirection="column" mt={60} px={80}>
+    <Flex flexDirection="column" mt={{ xs: 10, lg: 60 }} px={{ xs: 5, lg: 80 }}>
       <Flex mt={16} w="full" gap={16}>
-        <Box w="45%">
+        <Box w={{ xs: '100%', lg: '45%' }}>
           <Section title="Proton Studio" />
           <Text mt={8} fontSize={20} color="text.2">
             Là một studio nhỏ lưu trữ các video thú vị
@@ -51,19 +49,27 @@ const HomeStudio: React.FC = () => {
               const { title, url, image } = item;
               return (
                 <Link href={url} key={title} target="_blank" rel="noopener noreferrer">
-                  <Flex w={20} h={20}>
-                    <Image src={image} alt={title} />
+                  <Flex w={20} h={20} _hover={{ transform: 'scale(1.1)' }} transitionDuration="300ms">
+                    <Image w={20} h={20} src={image} alt={title} />
                   </Flex>
                 </Link>
               );
             })}
           </Flex>
 
-          <ButtonPrimary title="Xem chi tiết" mt={16} />
+          <ButtonGradient title="Xem chi tiết" mt={16} />
         </Box>
 
-        <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center" pl={40}>
-          <Image src={ImgIntro} alt="img" width={480} height={450} quality={100} />
+        <Flex
+          w="55%"
+          display={{ xs: 'none', lg: 'flex' }}
+          flexWrap="wrap"
+          columnGap={10}
+          direction="column"
+          align="center"
+          pl={40}
+        >
+          <Image src={ImgIntro} alt="img" w="480px" h="450px" />
         </Flex>
       </Flex>
     </Flex>
