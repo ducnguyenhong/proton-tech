@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@/utils/hooks';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { memo } from 'react';
 import AboutUs from './subs/about-us';
@@ -6,6 +7,8 @@ import FooterNews from './subs/news';
 import FooterService from './subs/service';
 
 const Footer: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 576px)', true, { getInitialValueInEffect: false });
+
   return (
     <footer>
       <Box
@@ -21,13 +24,17 @@ const Footer: React.FC = () => {
             <FooterIntro />
           </Flex>
 
-          <Flex w={{ xs: 'full', lg: 3 / 7 }} pl={10} display={{ xs: 'none', lg: 'flex' }}>
-            <FooterNews />
-          </Flex>
+          {!isMobile && (
+            <>
+              <Flex w={{ xs: 'full', lg: 3 / 7 }} pl={10}>
+                <FooterNews />
+              </Flex>
 
-          <Flex w={{ xs: 'full', lg: 1 / 7 }} direction="column" display={{ xs: 'none', lg: 'flex' }}>
-            <FooterService />
-          </Flex>
+              <Flex w={{ xs: 'full', lg: 1 / 7 }} direction="column">
+                <FooterService />
+              </Flex>
+            </>
+          )}
 
           <Flex w={{ xs: 'full', lg: 1 / 7 }} direction="column">
             <AboutUs />

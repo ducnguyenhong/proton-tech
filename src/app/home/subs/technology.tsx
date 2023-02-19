@@ -1,5 +1,6 @@
 'use client';
 import { Image, Section } from '@/components';
+import { useMediaQuery } from '@/utils/hooks';
 import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -13,6 +14,7 @@ import ImgTech5 from '../images/technology-5.png';
 import ImgTech6 from '../images/technology-6.png';
 
 const HomeTech: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 576px)', true, { getInitialValueInEffect: false });
   const TECH_DATA = [
     {
       title: 'Làm nét ảnh',
@@ -54,9 +56,11 @@ const HomeTech: React.FC = () => {
 
   return (
     <Flex align="center" justifyContent="center" mt={52} gap={10} mx={{ xs: 5, lg: 80 }} py={10}>
-      <Flex w="40%" pt={8} display={{ xs: 'none', lg: 'flex' }}>
-        <Image src={ImgIntro} alt="Proton Tech" w="400px" h="480px" />
-      </Flex>
+      {!isMobile && (
+        <Flex w="40%" pt={8}>
+          <Image src={ImgIntro} alt="Proton Tech" w="400px" h="480px" />
+        </Flex>
+      )}
       <Flex w={{ xs: '100%', lg: '60%' }} direction="column">
         <Flex direction="column" align="center">
           <Section title="Proton Tech" />

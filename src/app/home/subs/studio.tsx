@@ -1,5 +1,6 @@
 'use client';
 import { ButtonGradient, Image, Section } from '@/components';
+import { useMediaQuery } from '@/utils/hooks';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -10,6 +11,8 @@ import LogoTiktok from '../images/tiktok-studio.png';
 import LogoYoutube from '../images/youtube-studio.png';
 
 const HomeStudio: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 576px)', true, { getInitialValueInEffect: false });
+
   const SOCIAL_DATA = [
     {
       url: 'https://www.facebook.com/prstudiovn',
@@ -60,17 +63,11 @@ const HomeStudio: React.FC = () => {
           <ButtonGradient title="Xem chi tiết" mt={16} />
         </Box>
 
-        <Flex
-          w="55%"
-          display={{ xs: 'none', lg: 'flex' }}
-          flexWrap="wrap"
-          columnGap={10}
-          direction="column"
-          align="center"
-          pl={40}
-        >
-          <Image src={ImgIntro} alt="img" w="480px" h="450px" />
-        </Flex>
+        {!isMobile && (
+          <Flex w="55%" flexWrap="wrap" columnGap={10} direction="column" align="center" pl={40}>
+            <Image src={ImgIntro} alt="img" w="480px" h="450px" />
+          </Flex>
+        )}
       </Flex>
     </Flex>
   );
