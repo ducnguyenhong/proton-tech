@@ -1,10 +1,27 @@
 import { Flex } from '@chakra-ui/react';
-import NextImage from 'next/image';
-import PropTypes from 'prop-types';
+import NextImage, { StaticImageData } from 'next/image';
 import { memo, useCallback, useMemo, useState } from 'react';
 import { getBlurDataURL, getImageSizes } from './image.helper';
 
-const Image = (props: any) => {
+interface ImageProps {
+  src: string | StaticImageData;
+  alt?: string;
+  borderRadius?: string | number;
+  onLoaded?: () => void;
+  onError?: (e: Error) => void;
+  quality?: number;
+  priority?: boolean;
+  fallback?: any;
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  w?: any;
+  h?: any;
+  imgWidth?: number;
+  imgHeight?: number;
+  fill?: boolean;
+  opacity?: number;
+}
+
+const Image: React.FC<ImageProps> = (props) => {
   const [hasError, setHasError] = useState(false);
   const {
     src,
@@ -57,45 +74,6 @@ const Image = (props: any) => {
       />
     </Flex>
   );
-};
-
-Image.propTypes = {
-  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  alt: PropTypes.string,
-  fill: PropTypes.bool,
-  quality: PropTypes.number, // 0 -> 100
-  imgWidth: PropTypes.number, // attribute width of img tag
-  imgHeight: PropTypes.number, // attribute height of img tag
-  w: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.shape({
-      xs: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      sm: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      md: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      lg: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      xl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      '2xl': PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    })
-  ]), // css image size width
-  h: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.shape({
-      xs: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      sm: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      md: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      lg: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      xl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      '2xl': PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    })
-  ]), // css image size height
-  priority: PropTypes.bool,
-  onLoaded: PropTypes.func,
-  onError: PropTypes.func,
-  borderRadius: PropTypes.number,
-  objectFit: PropTypes.oneOf(['fill', 'contain', 'cover', 'none', 'scale-down', 'initial', 'inherit']),
-  fallback: PropTypes.element
 };
 
 export default memo(Image);
