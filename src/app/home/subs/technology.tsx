@@ -35,7 +35,7 @@ const HomeTech: React.FC = () => {
       image: ImgTech3
     },
     {
-      title: 'Hình ảnh',
+      title: 'Video',
       url: '/4',
       icon: FaImage,
       image: ImgTech4
