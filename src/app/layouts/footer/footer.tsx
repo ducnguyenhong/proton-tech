@@ -20,23 +20,23 @@ const Footer: React.FC = () => {
         pb={{ xs: 4, lg: 8 }}
       >
         <Flex flex={1} w="full" direction={{ xs: 'column', lg: 'row' }} gap={{ xs: 10, lg: 0 }}>
-          <Flex w={{ xs: 'full', lg: 2 / 7 }} direction="column" gap={{ xs: 3, lg: 5 }}>
+          <Flex w={{ xs: 'full', lg: 1 / 5 }} direction="column" gap={{ xs: 3, lg: 5 }}>
             <FooterIntro />
           </Flex>
 
           {!isMobile && (
             <>
-              <Flex w={{ xs: 'full', lg: 3 / 7 }} pl={10}>
+              <Flex w={{ xs: 'full', lg: 2 / 5 }} pl={10}>
                 <FooterNews />
               </Flex>
 
-              <Flex w={{ xs: 'full', lg: 1 / 7 }} direction="column">
+              <Flex w={{ xs: 'full', lg: 1 / 5 }} direction="column">
                 <FooterService />
               </Flex>
             </>
           )}
 
-          <Flex w={{ xs: 'full', lg: 1 / 7 }} direction="column">
+          <Flex w={{ xs: 'full', lg: 1 / 5 }} direction="column">
             <AboutUs />
           </Flex>
         </Flex>

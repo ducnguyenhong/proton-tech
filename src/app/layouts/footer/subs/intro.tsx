@@ -37,7 +37,7 @@ const FooterIntro: React.FC = () => {
   return (
     <>
       <Flex align="center" gap={4} justify={{ xs: 'center', lg: 'flex-start' }}>
-        <Image src={Logo} alt="logo" h={{ xs: '40px', lg: '70px' }} w={{ xs: '40px', lg: '70px' }} />
+        <Image src={Logo} alt="logo" h={{ xs: '40px', lg: '50px' }} w={{ xs: '40px', lg: '50px' }} />
         <Text fontSize={20} fontWeight={500}>
           Proton{' '}
           <Text as="span" fontWeight={200}>

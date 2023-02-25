@@ -2,15 +2,32 @@
 import { Image } from '@/components';
 import { Button, Flex, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
-import { memo, useCallback, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { memo, useCallback, useEffect, useMemo } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useRecoilState } from 'recoil';
+import BgHeader from './images/bg-header.png';
 import Menu from './menu';
 import { activeNavbarAtom } from './navbar.recoil';
 
 const Header: React.FC = () => {
+  const pathname = usePathname();
   const [activeNavbar, setActiveNavbar] = useRecoilState(activeNavbarAtom);
   const handleScroll = useCallback(() => setActiveNavbar(window.pageYOffset > 50), [setActiveNavbar]);
+
+  const bgColor = useMemo(() => {
+    if (pathname !== '/') {
+      return undefined;
+    }
+    return activeNavbar ? '#FFF' : 'transparent';
+  }, [activeNavbar, pathname]);
+
+  const bgImage = useMemo(() => {
+    if (pathname === '/') {
+      return undefined;
+    }
+    return `url(${BgHeader.src})`;
+  }, [pathname]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -25,8 +42,11 @@ const Header: React.FC = () => {
         position="fixed"
         top={0}
         left={0}
-        bgColor={activeNavbar ? '#FFF' : 'transparent'}
+        bgColor={bgColor}
         alignItems="center"
+        bgImage={bgImage}
+        bgRepeat="no-repeat"
+        bgSize="cover"
         boxShadow={activeNavbar ? 'base' : 'none'}
         justifyContent="space-between"
         px={28}

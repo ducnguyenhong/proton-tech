@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               // bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)"
             >
               <Header />
-              <main>{children}</main>
+              <main style={{ marginTop: '80px' }}>{children}</main>
               <Footer />
             </Box>
           </ChakraProvider>
