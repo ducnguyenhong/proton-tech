@@ -2,7 +2,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 import { activeNavbarAtom } from '../navbar.recoil';
 import { MENU_DATA } from './menu.data';
@@ -10,6 +10,7 @@ import { MENU_DATA } from './menu.data';
 const Menu: React.FC = () => {
   const pathname = usePathname();
   const activeNavbar = useRecoilValue(activeNavbarAtom);
+  const isActiveNavbarHome = useMemo(() => activeNavbar && pathname === '/', [activeNavbar, pathname]);
 
   return (
     <Flex>
@@ -31,8 +32,7 @@ const Menu: React.FC = () => {
                 data-group
               >
                 <Text
-                  color={activeNavbar ? '#6B01A9' : '#FFF'}
-                  bgGradient={activeNavbar ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
+                  bgGradient={isActiveNavbarHome ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
                   bgClip="text"
                   fontSize={19}
                   fontWeight={700}
@@ -46,7 +46,7 @@ const Menu: React.FC = () => {
                   h={isActive ? 0.5 : '1px'}
                   w={isActive ? 0.5 : 0}
                   borderRadius="full"
-                  bgGradient={activeNavbar ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
+                  bgGradient={isActiveNavbarHome ? 'linear(to-l, #7928CA, #FF0080)' : 'linear(to-l, #FFF, #FFF)'}
                   transitionDuration="400ms"
                   _groupHover={{
                     w: isActive ? 0.5 : '80%'

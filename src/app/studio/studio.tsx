@@ -1,5 +1,6 @@
 'use client';
 import { Image } from '@/components';
+import { useScrollTop } from '@/utils/hooks';
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
@@ -47,6 +48,8 @@ const Studio: NextPage = () => {
     }
   ];
 
+  useScrollTop();
+
   return (
     <Box px={80} mt={40}>
       <Text fontSize={30} fontWeight={600} textAlign="center" bgGradient="linear(to-l, #7928CA, #FF0080)" bgClip="text">
@@ -57,7 +60,7 @@ const Studio: NextPage = () => {
           const { title, image, url } = item;
           return (
             <Box key={url} w="22%" h={40} title={title}>
-              <Link href={url} display="block">
+              <Link href={url} display="block" target="_blank" rel="noopener noreferrer">
                 <Flex w="full" direction="column" borderRadius={30} align="center" h="full" p={5}>
                   <Image src={image} w={40} h={40} alt={title} />
                 </Flex>

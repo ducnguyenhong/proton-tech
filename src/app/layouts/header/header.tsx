@@ -13,6 +13,7 @@ import { activeNavbarAtom } from './navbar.recoil';
 const Header: React.FC = () => {
   const pathname = usePathname();
   const [activeNavbar, setActiveNavbar] = useRecoilState(activeNavbarAtom);
+  const isActiveNavbarHome = useMemo(() => activeNavbar && pathname === '/', [activeNavbar, pathname]);
   const handleScroll = useCallback(() => setActiveNavbar(window.pageYOffset > 50), [setActiveNavbar]);
 
   const bgColor = useMemo(() => {
@@ -56,16 +57,26 @@ const Header: React.FC = () => {
         <Flex w={44}>
           <Link href="/">
             <Flex alignItems="center" gap={3}>
-              <Image src={activeNavbar ? '/images/logo-active.png' : '/images/logo.png'} w="40px" h="40px" alt="logo" />
+              <Image
+                src={isActiveNavbarHome ? '/images/logo-active.png' : '/images/logo.png'}
+                w="40px"
+                h="40px"
+                alt="logo"
+              />
               <Text
                 as="h3"
-                color={activeNavbar ? 'primary.1' : '#FFF'}
+                color={isActiveNavbarHome ? 'primary.1' : '#FFF'}
                 fontWeight={600}
                 fontSize={20}
                 transitionDuration="300ms"
               >
                 Proton{' '}
-                <Text as="span" color={activeNavbar ? 'primary.1' : '#FFF'} fontWeight={400} transitionDuration="300ms">
+                <Text
+                  as="span"
+                  color={isActiveNavbarHome ? 'primary.1' : '#FFF'}
+                  fontWeight={400}
+                  transitionDuration="300ms"
+                >
                   Tech
                 </Text>
               </Text>
@@ -80,7 +91,7 @@ const Header: React.FC = () => {
         <Flex pos="relative" w={44}>
           <Flex gap={6} align="center" pos="absolute" top={0} bottom={0} right={0}>
             <Button
-              color={activeNavbar ? 'secondary.1' : '#FFF'}
+              color={isActiveNavbarHome ? 'secondary.1' : '#FFF'}
               bgColor="transparent"
               borderRadius="full"
               w="40px"
@@ -90,13 +101,13 @@ const Header: React.FC = () => {
               p={0}
               transitionDuration="300ms"
               _active={{ bgColor: 'transparent' }}
-              _hover={{ bgColor: activeNavbar ? 'secondary.1' : '#FFF' }}
+              _hover={{ bgColor: isActiveNavbarHome ? 'secondary.1' : '#FFF' }}
               data-group
             >
               <Icon
                 as={FiSearch}
                 fontSize={20}
-                _groupHover={{ color: activeNavbar ? '#FFF' : 'secondary.1' }}
+                _groupHover={{ color: isActiveNavbarHome ? '#FFF' : 'secondary.1' }}
                 transitionDuration="300ms"
               />
             </Button>

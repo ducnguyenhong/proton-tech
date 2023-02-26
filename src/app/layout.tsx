@@ -16,11 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <RecoilRoot>
           <ChakraProvider theme={chakraTheme}>
-            <Box
-              position="relative"
-              className={font.className}
-              // bgGradient="linear(to-r, #1B0738, #0E0625, #1E0739)"
-            >
+            <Box position="relative" className={font.className}>
               <Header />
               <main style={{ marginTop: '80px' }}>{children}</main>
               <Footer />
