@@ -22,7 +22,7 @@ const ColorConfig = {
 
 const FontConfig = {
   fonts: {
-    heading: `'Quicksand', sans-serif`
+    heading: `'Inter', sans-serif`
   }
 };
 

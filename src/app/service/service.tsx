@@ -1,5 +1,6 @@
 'use client';
-import { Box, Flex, Heading, Icon, Text } from '@chakra-ui/react';
+import { useScrollTop } from '@/utils/hooks';
+import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { FaAdversal, FaFileContract, FaGlobeAmericas, FaMobileAlt, FaPencilRuler } from 'react-icons/fa';
@@ -62,11 +63,13 @@ const Service: NextPage = () => {
     }
   ];
 
+  useScrollTop();
+
   return (
     <Box px={80} mt={40}>
-      <Heading as="h2" fontSize={30} textAlign="center" bgGradient="linear(to-l, #7928CA, #FF0080)" bgClip="text">
+      <Text fontSize={30} fontWeight={600} textAlign="center" bgGradient="linear(to-l, #7928CA, #FF0080)" bgClip="text">
         Các dịch vụ cung cấp
-      </Heading>
+      </Text>
       <Flex justify="space-between" mt={20} flexWrap="wrap" rowGap={20}>
         {SERVICE_DATA.map((item, index) => {
           const { icon, title, content, route, bgGradient1, bgGradient2, iconColor } = item;
