@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { FaRegCalendarAlt, FaUser } from 'react-icons/fa';
 import BlogSection from './components/blog-section';
 import ImgNews from './images/news.png';
+import BlogSlider from './subs/blog.slider';
 
 const Blog: NextPage = () => {
   useScrollTop();
@@ -16,7 +17,8 @@ const Blog: NextPage = () => {
       <Text fontSize={30} fontWeight={600} textAlign="center" bgGradient="linear(to-l, #7928CA, #FF0080)" bgClip="text">
         Proton Blog
       </Text>
-      <Flex mt={20} gap={14}>
+      <BlogSlider />
+      <Flex mt={28} gap={14}>
         <Flex flex={7 / 10} direction="column">
           <BlogSection title="Danh sách bài viết" color="#20B120" route="/blog/news" />
           <Flex direction="column" gap={10}>
@@ -73,7 +75,7 @@ const Blog: NextPage = () => {
           </Flex>
         </Flex>
         <Flex flex={3 / 10} direction="column">
-          <BlogSection title="Tin mới" color="#1295EF" route="/blog/newest" />
+          <BlogSection title="Tin mới" color="#1295EF" route="/blog/newest" disableSeeAll />
           <Flex direction="column" gap={8}>
             <Box w="full" boxShadow="base" overflow="hidden">
               <Link href="/">
